@@ -8,13 +8,13 @@ last_html = ""
 def fetch_stock_html():
     url = "https://arcaiuz.com/grow-a-garden-stock"
     headers = {
-        "User-Agent": "Mozilla/5.0"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
     }
 
     try:
         res = requests.get(url, headers=headers, timeout=10)
+        print(f"📶 Status code: {res.status_code}")
         if res.status_code != 200:
-            print("❌ Không lấy được trang web.")
             return ""
         return res.text
     except Exception as e:
